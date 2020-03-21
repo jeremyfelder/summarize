@@ -1,11 +1,11 @@
-import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 import { Component } from "react";
 import { Welcome } from '../screens/welcome';
 
 const Stack = createStackNavigator()
 
-export class OnboardingStack extends Component {
+export class HaveReadStack extends Component {
     render () {
         return (
             <Stack.Navigator initialRouteName="Welcome">
