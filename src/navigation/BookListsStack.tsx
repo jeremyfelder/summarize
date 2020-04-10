@@ -3,6 +3,7 @@ import Welcome from '../screens/welcome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
+// Change this to just have progressBarCell s and have a sorting option based on progess.
 
 export default function BookListsStack () {
     return (
