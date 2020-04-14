@@ -1,3 +1,5 @@
-export default Images = {
-  // singleStar: require('./imgs/singleStar.png')
+const Images = {
+  testImage: require('./imgs/testImage.jpg'),
 }
+
+export default Images

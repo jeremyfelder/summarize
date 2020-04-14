@@ -1,3 +1,1 @@
-export default Urls = {
-  
-}
+export const firstUrl = "someURL"

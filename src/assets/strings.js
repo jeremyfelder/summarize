@@ -1,6 +1,2 @@
-export default Strings = {
-  ok = 'ok',
-  Ok: ok.toUpperCase(),
-  go = 'go',
-  Go = go.toUpperCase(),
-}
+export const ok = 'ok';
+export const go = 'go';
