@@ -1,8 +1,9 @@
 import * as React from 'react';
 import Cell from '../components/cell';
+//@ts-ignore
 import { SectionList, Text, View, StyleSheet } from "react-native";
-import { Images } from '@assets/index';
-import { Colors } from '@assets/index';
+import { Images } from '../assets';
+import { Colors } from '../assets';
 
 export default function Summaries (props: any) {
   // const renderSectionSeparator = (title: string) => {
@@ -11,6 +12,10 @@ export default function Summaries (props: any) {
   //   )
   // }
 
+  const onPress = () => {
+
+  }
+
   return (
     // <SectionList
     //   sections={props.data}
@@ -18,7 +23,11 @@ export default function Summaries (props: any) {
     //   stickySectionHeadersEnabled
     // />
     <View style={styles.container}>
-      <Cell bookImage={Images.testImage} title={"Test Title"} percentFinished={50}/>
+      <Cell 
+        bookImage={Images.testImage}
+        title={"Give and Take"} 
+        percentFinished={0.5}
+        onPress={onPress}/>
     </View>
   )
 }
@@ -26,6 +35,6 @@ export default function Summaries (props: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.whitesmoke
+    backgroundColor: Colors.white
   }
 });

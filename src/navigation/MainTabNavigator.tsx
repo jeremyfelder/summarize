@@ -9,8 +9,8 @@ const TabStack = createBottomTabNavigator();
 export default function MainTabNavigator () {
     return (
         <TabStack.Navigator>
-            <TabStack.Screen name="Book Lists" component={ BookListsStack } />
             <TabStack.Screen name="Stats" component={ StatsStack } />
+            <TabStack.Screen name="Book Lists" component={ BookListsStack } />
             <TabStack.Screen name="Account" component={ AccountStack } />
         </TabStack.Navigator>
     )

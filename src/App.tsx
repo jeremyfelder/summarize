@@ -5,8 +5,6 @@ import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import MainTabNavigator from './navigation/MainTabNavigator';
 
-declare var global: {HermesInternal: null | {}};
-
 function App () {
   return (
     <SafeAreaProvider>
