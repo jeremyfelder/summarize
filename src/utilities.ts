@@ -1,11 +1,14 @@
-import { Platform } from "react-native";
+import { Dimensions, Platform } from "react-native";
 import DeviceInfo from 'react-native-device-info';
 
 //@ts-ignore
-const isAndroid = Platform.OS === "android"
+export const isAndroid = Platform.OS === "android"
 //@ts-ignore
-const isIOS = Platform.OS === "ios"
+export const isIOS = Platform.OS === "ios"
 //@ts-ignore
-const semanticVersion = DeviceInfo.getReadableVersion().split(".", 3).join(".")
+export const semanticVersion = DeviceInfo.getReadableVersion().split(".", 3).join(".")
 //@ts-ignore
-const isCharging = () => DeviceInfo.isBatteryCharging()
+export const isCharging = () => DeviceInfo.isBatteryCharging()
+export const deviceHeight = Dimensions.get('window').height;
+//@ts-ignore
+export const deviceWidth = Dimensions.get('window').width;

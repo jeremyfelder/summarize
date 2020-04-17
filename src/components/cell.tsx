@@ -1,8 +1,24 @@
 import * as React from 'react';
-import { View, StyleSheet, Image, Text } from "react-native";
+import { View, StyleSheet, Image, Text, ImageSourcePropType } from "react-native";
 import { TouchableHighlight } from "react-native-gesture-handler";
 import { Colors } from '../assets/';
 import * as Progress from 'react-native-progress';
+import { Divider } from 'react-native-elements';
+
+export interface CellProps {
+  bookImage: ImageSourcePropType;
+  title: string;
+  percentFinished: number;
+  onPress?: () => void;
+}
+
+export function CellDivider() {
+  return (
+    <View>
+      <Divider style={{ height: 0.5, backgroundColor: Colors.slategrey }}/>
+    </View>
+  )
+}
 
 export default function Cell (props: any) {
   const { bookImage, title, percentFinished, onPress } = props
