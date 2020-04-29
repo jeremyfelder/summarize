@@ -5,7 +5,6 @@ import DeviceInfo from 'react-native-device-info';
 export const isAndroid = Platform.OS === "android"
 //@ts-ignore
 export const isIOS = Platform.OS === "ios"
-//@ts-ignore
 export const semanticVersion = DeviceInfo.getReadableVersion().split(".", 3).join(".")
 //@ts-ignore
 export const isCharging = () => DeviceInfo.isBatteryCharging()

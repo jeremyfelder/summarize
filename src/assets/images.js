@@ -1,5 +1,5 @@
 const Images = {
-  // @ts-ignore
+    // @ts-ignore
   testImage: require('./imgs/testImage.jpg'),
 }
 

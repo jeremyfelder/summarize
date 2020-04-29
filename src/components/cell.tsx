@@ -6,40 +6,40 @@ import * as Progress from 'react-native-progress';
 import { Divider } from 'react-native-elements';
 
 export interface CellProps {
-  bookImage: ImageSourcePropType;
   title: string;
-  percentFinished: number;
+  icon?: ImageSourcePropType;
+  percentFinished?: number;
   onPress?: () => void;
 }
 
 export function CellDivider() {
   return (
     <View>
-      <Divider style={{ height: 0.5, backgroundColor: Colors.slategrey }}/>
+      <Divider style={{ height: 0.5, backgroundColor: Colors.lightgrey, marginLeft: 16 }}/>
     </View>
   )
 }
 
 export default function Cell (props: any) {
-  const { bookImage, title, percentFinished, onPress } = props
+  const { icon, title, percentFinished, onPress } = props
   return (
     <TouchableHighlight
       disabled={!onPress}
       onPress={onPress}
     >
       <View style={styles.container}>
-        <Image style={styles.icon} source={bookImage}/>
+        {icon && <Image style={styles.icon} source={icon}/> }
         <View style={styles.middleContainer}>
           <Text style={styles.text}>{title}</Text>
-          <Progress.Bar 
+          {percentFinished && <Progress.Bar 
             style={styles.progressBar} 
             progress={percentFinished} 
-            unfilledColor={Colors.black} 
+            unfilledColor={Colors.slategrey} 
             color={Colors.green}
             borderWidth={0}
             // width={null}
             height={10}
-            borderRadius={6}/>
+            borderRadius={6}/>}
         </View>
       </View>
     </TouchableHighlight>
@@ -48,7 +48,7 @@ export default function Cell (props: any) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 70,
+    height: 54,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -65,9 +65,10 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end'
   },
   text: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: 'left',
-    paddingBottom: 10
+    paddingBottom: 10,
+    fontWeight: 'bold'
   },
   progressBar: {
 
