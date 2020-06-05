@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Image, StyleSheet } from "react-native";
 import { Images } from "../../assets/index";
 
-export default function EmptyBooks() {
+export default function EmptyBookList() {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={Images.testImage}/>

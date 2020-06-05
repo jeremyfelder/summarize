@@ -8,6 +8,7 @@ export const isIOS = Platform.OS === "ios"
 export const semanticVersion = DeviceInfo.getReadableVersion().split(".", 3).join(".")
 //@ts-ignore
 export const isCharging = () => DeviceInfo.isBatteryCharging()
+//@ts-ignore
 export const deviceHeight = Dimensions.get('window').height;
 //@ts-ignore
 export const deviceWidth = Dimensions.get('window').width;

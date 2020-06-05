@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { SectionList, Text, View, StyleSheet, Button, Image } from "react-native";
+import { SectionList, Text, View, StyleSheet, Alert } from "react-native";
 import { Colors, Images } from '../../assets';
 import { Divider } from 'react-native-elements';
 import Cell, { CellProps, CellDivider } from '../../components/cell';
-import EmptyBooks from './emptyBooks';
+import EmptyBookList from './emptyBookList';
 import { TouchableHighlight } from 'react-native-gesture-handler';
-import { deviceWidth, deviceHeight } from '../../../src/utilities';
+import { deviceWidth } from '../../utilities';
+import { ScreenNames } from '../../navigation';
 
-export default function Books (props: any) {
+export default function BookList (props: any) {
   const renderRow = (item: CellProps) => {
     return (
       <Cell {...item}/>
@@ -28,14 +29,20 @@ export default function Books (props: any) {
     )
   }
 
+  const addNewBook = () => {
+    props.navigation.navigate(ScreenNames.NEW_BOOK);
+  }
+
   const data = [];
+  const testTitle = "Thing";
   if(true) data.push({
     'title': 'Currently Reading',
     data: [
       {
-        title: "Thing",
+        title: testTitle,
         icon: Images.testImage,
-        percentFinished: 0.43
+        percentFinished: 0.43,
+        onPress: () => {Alert.alert(`Navigating to notes for ${testTitle}`)}
       }
     ]//props.currentlyReading
   })
@@ -52,7 +59,7 @@ export default function Books (props: any) {
     <View style={styles.container}>
       <SectionList
         sections={data}
-        ListEmptyComponent={EmptyBooks}
+        ListEmptyComponent={EmptyBookList}
         ItemSeparatorComponent={CellDivider}
         renderItem={({ item }) => renderRow(item as CellProps)}
         renderSectionHeader={({ section: { title }}) => renderSectionHeader(title)}
@@ -62,7 +69,7 @@ export default function Books (props: any) {
       <TouchableHighlight 
         style={styles.floatingButton}
         disabled={false}
-        onPress={() => {}}
+        onPress={(event) => addNewBook()}
         underlayColor={Colors.lightpink}>
         <Text style={styles.floatingButtonIcon}>+</Text>
       </TouchableHighlight>
