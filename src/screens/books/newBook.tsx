@@ -14,6 +14,10 @@ export default function NewBook (props: any) {
       <TextInput
         defaultValue={Strings.exampleAuthor}
       />
+      <Text style={styles.pages}>{Strings.NumPages}</Text>
+      <TextInput
+        defaultValue={Strings.exampleNumPages}
+      />
     </View>
   )
 }
@@ -24,5 +28,8 @@ const styles = StyleSheet.create({
   },
   author: {
 
-  }
+  },
+  pages: {
+
+  },
 })
