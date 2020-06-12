@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatsStack, BookListsStack, AccountStack } from './index';
-import { Colors } from '../assets/';
-import { Icon } from 'react-native-elements';
+import { Colors, Images } from '../assets/';
+import TabBarIcon, { tabBarIconArguments } from '../components/tabBarIcon';
 
 
 const TabStack = createBottomTabNavigator(); 
@@ -17,7 +17,7 @@ export default function MainTabNavigator () {
                 activeBackgroundColor: Colors.whitesmoke,
                 inactiveTintColor: Colors.grey,
                 inactiveBackgroundColor: Colors.white,
-                showLabel: true,
+                showLabel: false,
                 showIcon: true,
                 labelPosition:"below-icon",
                 allowFontScaling: false,
@@ -29,13 +29,41 @@ export default function MainTabNavigator () {
                 name="Stats" 
                 component={ StatsStack }
                 options={{
-                    tabBarIcon: () => (
-                        <Icon name="ios-person" color={"#4F8EF7"} size={30} />
-                      ),
+                    tabBarIcon: ({focused, color, size}: tabBarIconArguments) => (
+                        <TabBarIcon
+                            activeIcon={Images.accountTabIcon}
+                            nonActiveIcon={Images.testImage}
+                            focused={focused}
+                        />
+                    )
                 }}
             />
-            <TabStack.Screen name="Book Lists" component={ BookListsStack } />
-            <TabStack.Screen name="Account" component={ AccountStack } />
+            <TabStack.Screen 
+                name="Book Lists" 
+                component={ BookListsStack } 
+                options={{
+                    tabBarIcon: ({focused, color, size}: tabBarIconArguments) => (
+                        <TabBarIcon
+                            activeIcon={Images.accountTabIcon}
+                            nonActiveIcon={Images.testImage}
+                            focused={focused}
+                        />
+                    )
+                }}
+            />
+            <TabStack.Screen 
+                name="Account" 
+                component={ AccountStack } 
+                options={{
+                    tabBarIcon: ({focused, color, size}: tabBarIconArguments) => (
+                        <TabBarIcon
+                            activeIcon={Images.accountTabIcon}
+                            nonActiveIcon={Images.testImage}
+                            focused={focused}
+                        />
+                    )
+                }}
+            />
         </TabStack.Navigator>
     )
 }
