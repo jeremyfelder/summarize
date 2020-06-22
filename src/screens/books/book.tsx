@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { TextInput } from "react-native-gesture-handler";
-import { Strings } from "../../assets/";
+import { Strings } from "../../assets";
 import { View, Text, StyleSheet } from "react-native";
 
-export default function NewBook (props: any) {
+export default function Book (props: any) {
   return (
     <View>
       <Text style={styles.title}>{Strings.Title}</Text>

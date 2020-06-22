@@ -11,7 +11,10 @@ import { ScreenNames } from '../../navigation';
 export default function BookList (props: any) {
   const renderRow = (item: CellProps) => {
     return (
-      <Cell {...item}/>
+      <Cell 
+        onPress={() => props.navigation.navigate(ScreenNames.NOTES)}
+        {...item}
+      />
     )
   }
 
@@ -42,7 +45,6 @@ export default function BookList (props: any) {
         title: testTitle,
         icon: Images.testImage,
         percentFinished: 0.43,
-        onPress: () => {Alert.alert(`Navigating to notes for ${testTitle}`)}
       }
     ]//props.currentlyReading
   })
