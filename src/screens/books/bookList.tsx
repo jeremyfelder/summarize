@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SectionList, Text, View, StyleSheet, Alert } from "react-native";
+import { SectionList, Text, View, StyleSheet } from "react-native";
 import { Colors, Images } from '../../assets';
 import { Divider } from 'react-native-elements';
 import Cell, { CellProps, CellDivider } from '../../components/cell';

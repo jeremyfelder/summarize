@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { StyleSheet, View, SectionList, TouchableHighlight, Text, Alert } from 'react-native';
+import { StyleSheet, View, SectionList, TouchableHighlight, Text } from 'react-native';
 import EmptyNoteList from '../notes/emptyNoteList';
-import { CellDivider, CellProps } from '../../components/cell';
+import { CellDivider } from '../../components/cell';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { ScreenNames } from '../../navigation';
 import { deviceWidth } from '../../utilities';

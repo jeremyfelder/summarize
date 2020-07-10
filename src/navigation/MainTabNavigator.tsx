@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatsStack, BookListsStack, AccountStack } from './index';
-import { Colors, Images } from '../assets/';
+import { Colors, Images } from '../assets';
 import TabBarIcon, { tabBarIconArguments } from '../components/tabBarIcon';
 
 
